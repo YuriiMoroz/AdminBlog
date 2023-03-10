@@ -1,0 +1,34 @@
+<div class="main">
+    <div class="left">
+        <p>Blogs</p>
+    </div>
+    <div class="right">
+        <input type="text" [(ngModel)]="title" placeholder="title  here.." name="" id="">
+        <textarea name="" id="" cols="30" rows="10" placeholder="text here.." [(ngModel)]="text"></textarea>
+        <input type="text" placeholder="author here.." [(ngModel)]="author">
+        <input type="button" value="Add" class="add" (click)="createPost()" *ngIf="!edit"[disabled]="!(title&&text&&author)">
+        <input type="button" value="Save" class="add" (click)="savePost()" *ngIf="edit"[disabled]="!(title&&text&&author)">
+        <hr>
+        <br>
+        <table>
+            <tr>
+                <th>#</th>
+                <th>Title</th>
+                <th>Text</th>
+                <th>Author</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+            <tr *ngFor="let item of PostsArr; index as i">
+                <td>{{i+1}}</td>
+                <td>{{item.title}}</td>
+                <td>{{item.text | slice:0:10}}
+                    <span *ngIf="item.text.length > 10">...</span> 
+                </td>
+                <td>{{item.author|titlecase}}</td>
+                <td><button (click)="editPost(item)">Edit</button></td>
+                <td><button (click)="deletePost(item)"[disabled]="edit">Delete</button></td>
+            </tr>
+        </table>
+    </div>
+</div>

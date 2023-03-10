@@ -1,0 +1,27 @@
+*{
+    margin: 0;padding: 0;box-sizing: border-box;
+}
+
+.main{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    .box{
+        p{
+            margin: 10px 0;
+        }
+        padding-top: 20px;
+        .author{
+            color: blue;
+        }
+        .title{
+            font-size: 24px;
+        }
+    }
+    .image{
+        width: 30%;
+        img{
+            width: 430px;
+        }
+    }
+}

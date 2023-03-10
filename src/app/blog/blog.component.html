@@ -1,0 +1,10 @@
+<div class="main">
+    <div class="box"*ngFor="let item of posts">
+        <div class="image">
+            <img [src]="item.imagePath">
+            <p class="author">{{item.author|uppercase}}</p>
+            <p class="title">{{item.title}}</p>
+            <p class="text">{{item.text}}</p>
+        </div>
+    </div>
+</div>
